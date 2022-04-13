@@ -28,7 +28,7 @@ def make_clickable(name, link):
 
 
 def main():
-    image = Image.open("input/wordcloud.png").resize((680, 150))
+    image = Image.open("whatscooking-deployment-master/input/wordcloud.png").resize((680, 150))
     st.image(image)
     st.markdown("# *What's Cooking? :cooking:*")
     st.markdown(
@@ -58,7 +58,7 @@ def main():
 
         col1, col2, col3 = st.beta_columns([1, 6, 1])
         with col2:
-            gif_runner = st.image("input/cooking_gif.gif")
+            gif_runner = st.image("whatscooking-deployment-master/input/cooking_gif.gif")
         # recipe = rec_sys.RecSys(ingredients)
         recipe = get_recs(ingredients, mean=True)
         gif_runner.empty()
