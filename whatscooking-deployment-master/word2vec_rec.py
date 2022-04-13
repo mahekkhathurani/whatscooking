@@ -189,12 +189,12 @@ class TfidfEmbeddingVectorizer(object):
 
 def get_recs(ingredients, N=5, mean=False):
     # load in word2vec model
-    model = Word2Vec.load("models/model_cbow.bin")
+    model = Word2Vec.load("whatscooking-deployment-master/models/model_cbow.bin")
     model.init_sims(replace=True)
     if model:
         print("Successfully loaded model")
     # load in data
-    data = pd.read_csv("input/df_parsed.csv")
+    data = pd.read_csv("whatscooking-deployment-master/input/df_parsed.csv")
     # parse ingredients
     data["parsed"] = data.ingredients.apply(ingredient_parser)
     # create corpus
